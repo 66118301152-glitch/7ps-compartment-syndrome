@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7Ps Assessment - Compartment Syndrome</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-leg">
+    <svg viewBox="0 0 300 700" xmlns="http://www.w3.org/2000/svg">
+      <path d="M160 40 
+               C180 80, 190 140, 185 220
+               C180 300, 175 360, 178 430
+               C180 500, 190 560, 205 640
+               L170 650
+               C150 580, 135 500, 130 430
+               C125 370, 128 305, 130 240
+               C132 170, 125 110, 105 60
+               Z" />
+      <path d="M130 430 
+               C110 500, 100 560, 105 640
+               L140 645
+               C142 570, 150 500, 160 440
+               Z" />
+    </svg>
+  </div>
+
+  <div class="overlay"></div>
+
+  <main class="container">
+    <header class="hero">
+      <h1>7Ps Assessment</h1>
+      <p class="subtitle">Compartment Syndrome Evaluation Tool</p>
+      <p class="description">
+        เว็บประเมิน 7Ps สำหรับใช้ในการเฝ้าระวังภาวะ Compartment Syndrome  
+        ใช้เพื่อการเรียนรู้และการประเมินเบื้องต้นเท่านั้น
+      </p>
+    </header>
+
+    <section class="patient-info card">
+      <h2>ข้อมูลการประเมิน</h2>
+      <div class="form-grid">
+        <div>
+          <label for="patientName">ชื่อผู้ป่วย</label>
+          <input type="text" id="patientName" placeholder="กรอกชื่อผู้ป่วย" />
+        </div>
+        <div>
+          <label for="hn">HN / รหัสผู้ป่วย</label>
+          <input type="text" id="hn" placeholder="กรอก HN" />
+        </div>
+        <div>
+          <label for="assessmentDate">วันที่ประเมิน</label>
+          <input type="datetime-local" id="assessmentDate" />
+        </div>
+        <div>
+          <label for="limb">ตำแหน่งที่ประเมิน</label>
+          <select id="limb">
+            <option value="">-- เลือกตำแหน่ง --</option>
+            <option>ขาขวา</option>
+            <option>ขาซ้าย</option>
+            <option>แขนขวา</option>
+            <option>แขนซ้าย</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="assessment-section">
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>1. Pain</h3>
+          <span>อาการปวด</span>
+        </div>
+        <p class="meaning">ปวดรุนแรงผิดปกติ โดยเฉพาะปวดมากกว่าที่คาดจากการบาดเจ็บ และปวดเพิ่มเมื่อมีการยืดกล้ามเนื้อแบบ passive stretch</p>
+        <details>
+          <summary>วิธีประเมิน Pain</summary>
+          <ul>
+            <li>สอบถามระดับความปวดจากผู้ป่วย</li>
+            <li>สังเกตว่าปวดมากผิดปกติหรือไม่</li>
+            <li>ประเมินว่าปวดเพิ่มขึ้นเมื่อมีการขยับหรือยืดกล้ามเนื้อแบบ passive stretch หรือไม่</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Pain">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Pain" placeholder="เช่น ปวดมากขึ้นเมื่อเหยียดนิ้วเท้า"></textarea>
+      </div>
+
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>2. Pallor</h3>
+          <span>ซีด</span>
+        </div>
+        <p class="meaning">ผิวหนังบริเวณอวัยวะที่ได้รับผลมีสีซีดกว่าปกติ</p>
+        <details>
+          <summary>วิธีประเมิน Pallor</summary>
+          <ul>
+            <li>สังเกตสีผิวบริเวณปลายอวัยวะ</li>
+            <li>เปรียบเทียบกับข้างปกติ</li>
+            <li>ดูว่าผิวมีความซีดหรือคล้ำผิดปกติหรือไม่</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Pallor">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Pallor" placeholder="เช่น ผิวซีดกว่าข้างซ้าย"></textarea>
+      </div>
+
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>3. Paresthesia</h3>
+          <span>ชา / เสียวซ่า</span>
+        </div>
+        <p class="meaning">มีอาการชาหรือความรู้สึกผิดปกติ เช่น ชา เสียวซ่า หรือรับความรู้สึกลดลง</p>
+        <details>
+          <summary>วิธีประเมิน Paresthesia</summary>
+          <ul>
+            <li>สอบถามผู้ป่วยว่ามีอาการชาหรือเสียวซ่าหรือไม่</li>
+            <li>ทดสอบการรับความรู้สึกเบื้องต้น เช่น สัมผัสเบา ๆ</li>
+            <li>เปรียบเทียบกับอวัยวะอีกข้าง</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Paresthesia">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Paresthesia" placeholder="เช่น มีอาการชาปลายเท้า"></textarea>
+      </div>
+
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>4. Paralysis</h3>
+          <span>อ่อนแรง / เคลื่อนไหวไม่ได้</span>
+        </div>
+        <p class="meaning">การเคลื่อนไหวของอวัยวะลดลงหรือไม่สามารถขยับได้ตามปกติ</p>
+        <details>
+          <summary>วิธีประเมิน Paralysis</summary>
+          <ul>
+            <li>ให้ผู้ป่วยลองขยับนิ้วมือ นิ้วเท้า หรือข้อที่เกี่ยวข้อง</li>
+            <li>ประเมินกำลังกล้ามเนื้อเบื้องต้น</li>
+            <li>สังเกตว่ามีอาการอ่อนแรงหรือขยับไม่ได้หรือไม่</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Paralysis">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Paralysis" placeholder="เช่น ขยับนิ้วเท้าได้น้อยลง"></textarea>
+      </div>
+
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>5. Pulselessness</h3>
+          <span>คลำชีพจรไม่ได้</span>
+        </div>
+        <p class="meaning">ชีพจรส่วนปลายอ่อนลงหรือคลำไม่ได้</p>
+        <details>
+          <summary>วิธีประเมิน Pulselessness</summary>
+          <ul>
+            <li>คลำชีพจรส่วนปลายของอวัยวะนั้น</li>
+            <li>เปรียบเทียบความแรงกับข้างปกติ</li>
+            <li>หากคลำไม่ได้ให้บันทึกและเฝ้าระวังอย่างใกล้ชิด</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Pulselessness">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Pulselessness" placeholder="เช่น Dorsalis pedis pulse เบา"></textarea>
+      </div>
+
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>6. Poikilothermia</h3>
+          <span>อุณหภูมิผิดปกติ / ปลายอวัยวะเย็น</span>
+        </div>
+        <p class="meaning">บริเวณปลายอวัยวะเย็นกว่าปกติหรือเย็นกว่าข้างตรงข้าม</p>
+        <details>
+          <summary>วิธีประเมิน Poikilothermia</summary>
+          <ul>
+            <li>ใช้หลังมือสัมผัสเปรียบเทียบอุณหภูมิผิวหนัง</li>
+            <li>เทียบกับอวัยวะอีกข้าง</li>
+            <li>สังเกตว่ามีความเย็นผิดปกติหรือไม่</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Poikilothermia">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Poikilothermia" placeholder="เช่น ปลายเท้าเย็นกว่าข้างซ้าย"></textarea>
+      </div>
+
+      <div class="card p-card">
+        <div class="p-header">
+          <h3>7. Pressure</h3>
+          <span>ความตึงแน่นของกล้ามเนื้อ</span>
+        </div>
+        <p class="meaning">บริเวณช่องกล้ามเนื้อมีอาการบวม ตึง แข็ง หรือแน่นผิดปกติ</p>
+        <details>
+          <summary>วิธีประเมิน Pressure</summary>
+          <ul>
+            <li>คลำบริเวณกล้ามเนื้อว่าตึงหรือแข็งผิดปกติหรือไม่</li>
+            <li>สังเกตอาการบวมของอวัยวะ</li>
+            <li>ดูว่าผู้ป่วยเจ็บมากเมื่อสัมผัสหรือไม่</li>
+          </ul>
+        </details>
+        <label>ผลการประเมิน</label>
+        <select class="status" data-label="Pressure">
+          <option value="">-- เลือกผลการประเมิน --</option>
+          <option value="normal">ปกติ</option>
+          <option value="abnormal">ผิดปกติ</option>
+          <option value="not-assessed">ยังไม่ได้ประเมิน</option>
+        </select>
+        <label>หมายเหตุ</label>
+        <textarea class="note" data-label="Pressure" placeholder="เช่น กล้ามเนื้อบวมตึงแข็ง"></textarea>
+      </div>
+    </section>
+
+    <section class="card result-card">
+      <h2>สรุปผลการประเมิน</h2>
+      <button id="summarizeBtn">สรุปผล</button>
+      <button id="clearBtn" class="secondary">ล้างข้อมูล</button>
+      <div id="summaryOutput" class="summary-output">
+        <p>เมื่อกดปุ่ม “สรุปผล” ระบบจะแสดงผลการประเมินตรงนี้</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Educational Use Only | 7Ps Assessment for Compartment Syndrome</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
